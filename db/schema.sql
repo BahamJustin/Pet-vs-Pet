@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS petvspet_db;
+
+CREATE DATABASE petvspet_db;
