@@ -1,0 +1,44 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Vs Pet</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav>
+          {{#if loggedIn}}
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <button id="logout" class="btn-no-style">Logout</button>
+          {{else}}
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+
+          {{/if}}
+        </nav>
+        <div>
+          <h1>
+            <a href="/">Pet Vs Pet</a>
+          </h1>
+        </div>
+
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
+
+</html>
