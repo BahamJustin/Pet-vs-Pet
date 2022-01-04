@@ -14,6 +14,7 @@ class Post extends Model {
         attributes: [
           "id",
           "title",
+          "img",
           "created_at",
           [
             sequelize.literal(
@@ -61,6 +62,13 @@ Post.init(
         model: "user",
         key: "id",
       },
+    },
+    img: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isURL: true
+      }
     },
   },
   {
