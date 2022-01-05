@@ -1,4 +1,5 @@
-const Sequelize = require("sequelize");
+//const Sequelize = require("sequelize");
+let sequelize;
 
 require("dotenv").config();
 
@@ -10,7 +11,7 @@ require("dotenv").config();
 //       port: 3306,
 //     });
 
-let sequelize;
+
 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
