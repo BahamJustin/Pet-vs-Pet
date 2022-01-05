@@ -12,6 +12,7 @@ router.get("/", withAuth, (req, res) => {
     },
     attributes: [
       "id",
+      "img",
       "title",
       "created_at",
       [
@@ -51,6 +52,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
     attributes: [
       "id",
       "title",
+      "img",
       "created_at",
       [
         sequelize.literal(

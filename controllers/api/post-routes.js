@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
     attributes: [
       "id",
       "title",
+      "img",
       "created_at",
       [
         sequelize.literal(
@@ -47,6 +48,7 @@ router.get("/:id", (req, res) => {
     attributes: [
       "id",
       "title",
+      "img",
       "created_at",
       [
         sequelize.literal(
@@ -86,6 +88,7 @@ router.get("/:id", (req, res) => {
 router.post("/", withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
+    img: req.body.img,
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))

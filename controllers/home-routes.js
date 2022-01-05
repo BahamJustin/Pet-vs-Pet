@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
     attributes: [
       "id",
       "title",
+      "img",
       "created_at",
       [
         sequelize.literal(
@@ -53,6 +54,7 @@ router.get("/post/:id", (req, res) => {
     attributes: [
       "id",
       "title",
+      "img",
       "created_at",
       [
         sequelize.literal(
