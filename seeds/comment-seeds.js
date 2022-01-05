@@ -1,20 +1,23 @@
 const { Comment } = require("../models");
 
-const commentSeeds = [{
-    comment_text: 'Nunc rhoncus dui vel sem.',
+const commentSeeds = [
+  {
+    comment_text: "Nunc rhoncus dui vel sem.",
     user_id: 6,
-    post_id: 1
+    post_id: 1,
   },
   {
-    comment_text: 'Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
+    comment_text:
+      "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
     user_id: 6,
-    post_id: 8
+    post_id: 2,
   },
   {
-    comment_text: 'Aliquam erat volutpat. In congue.',
+    comment_text: "Aliquam erat volutpat. In congue.",
     user_id: 3,
-    post_id: 10
-  }];
+    post_id: 3,
+  },
+];
 
 const seedComments = () => Comment.bulkCreate(commentSeeds);
 
