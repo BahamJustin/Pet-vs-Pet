@@ -40,6 +40,29 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/leaderboard", (req, res) => {
+  Post.findAll({
+    order: [[sequelize.literal("vote_count"), "DESC"]],
+    attributes: [
+      "id",
+      "title",
+      // "img",
+      // "created_at",
+      [
+        sequelize.literal(
+          "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
+        ),
+        "vote_count",
+      ],
+    ],
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get("/:id", (req, res) => {
   Post.findOne({
     where: {
